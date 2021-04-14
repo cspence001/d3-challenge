@@ -279,3 +279,4 @@ d3.csv("/assets/data/data.csv").then(function(metroData, err) {
 }).catch(function(error) {
   console.log(error);
 });
+};
