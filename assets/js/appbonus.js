@@ -84,10 +84,9 @@ function updateToolTip(chosenXAxis, circlesGroup) {
         if (chosenXaxis === "poverty") {
       return (`${d.abbr}<br>${label} ${d[chosenXAxis]}`);
     };
-  }
 
   circlesGroup.call(toolTip);
-
+  }
   circlesGroup.on("mouseover", function(metroData) {
     toolTip.show(metroData);
   })
@@ -98,6 +97,7 @@ function updateToolTip(chosenXAxis, circlesGroup) {
 
   return circlesGroup;
 });
+}
 
 // Retrieve data from the CSV file and execute everything below
 d3.csv("/assets/data/data.csv").then(function(metroData, err) {
@@ -144,22 +144,22 @@ d3.csv("/assets/data/data.csv").then(function(metroData, err) {
     .attr("fill", "pink")
     .attr("opacity", ".5");
 
-  var circleLabels = chartGroup.selectAll(null).data(metroData).enter().append("text");
+  // var circleLabels = chartGroup.selectAll(null).data(metroData).enter().append("text");
 
-    circleLabels
-      .attr("x", function(d) {
-        return xLinearScale(d[chosenXAxis]);
-      })
-      .attr("y", function(d) {
-        return yLinearScale(d.poverty);
-      })
-      .text(function(d) {
-        return d.abbr;
-      })
-      .attr("font-family", "sans-serif")
-      .attr("font-size", "10px")
-      .attr("text-anchor", "middle")
-      .attr("fill", "white");
+  //   circleLabels
+  //     .attr("x", function(d) {
+  //       return xLinearScale(d[chosenXAxis]);
+  //     })
+  //     .attr("y", function(d) {
+  //       return yLinearScale(d.poverty);
+  //     })
+  //     .text(function(d) {
+  //       return d.abbr;
+  //     })
+  //     .attr("font-family", "sans-serif")
+  //     .attr("font-size", "10px")
+  //     .attr("text-anchor", "middle")
+  //     .attr("fill", "white");
     
 
   // Create group for two x-axis labels
@@ -277,4 +277,3 @@ d3.csv("/assets/data/data.csv").then(function(metroData, err) {
 }).catch(function(error) {
   console.log(error);
 });
-}
