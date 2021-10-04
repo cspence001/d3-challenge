@@ -12,4 +12,4 @@ Assets Folder containing JS Folder with correspondent files rendering each html 
 Languages/Components/Libraries:
 Javascript, HTML, D3, Bootstrap Components
 
-note: runs command python -m http.server at localhost:8000 from index directory.
+<h6>note: runs command python -m http.server at localhost:8000 from index directory.</h6>
